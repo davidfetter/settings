@@ -1,0 +1,9 @@
+\set HISTCONTROL ignoreboth
+\set HISTSIZE -1
+\set ON_ERROR_STOP
+\set PROMPT1 '%n@%/:%>% (%:SERVER_VERSION_NAME:) # '
+
+\pset linestyle unicode
+\pset unicode_border_linestyle single
+\pset unicode_column_linestyle single
+\pset unicode_header_linestyle double
