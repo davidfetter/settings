@@ -10,10 +10,12 @@ refresh_agent () {
     if [ $? != 0 ]; then
         ssh-agent > ~/.ssh_agent.sh
     fi
-    ssh-add -ql >/dev/null 2>&1
+    ssh-add -l >/dev/null 2>&1
     if [ $? != 0 ]; then
-        . ~/.ssh_agent.sh &&
-        ssh-add $(ls ~/.ssh/id_!(*pub))
+        if ls ~/.ssh/id_!(*pub) >/dev/null 2>&1; then
+            . ~/.ssh_agent.sh &&
+            ssh-add $(ls ~/.ssh/id_!(*pub))
+        fi
     fi
 }
 
