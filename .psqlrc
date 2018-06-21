@@ -1,7 +1,7 @@
 \set HISTCONTROL ignoreboth
 \set HISTSIZE -1
 \set ON_ERROR_STOP
-\set PROMPT1 '%n@%/:%>% (%:SERVER_VERSION_NAME:) # '
+\set PROMPT1 '%n@%M:%:PORT:/%/(%:SERVER_VERSION_NAME:) (pid %p) %# '
 
 \pset linestyle unicode
 \pset unicode_border_linestyle single
