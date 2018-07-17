@@ -33,7 +33,7 @@ prompt_command() {
         if [ -f "$GIT_PROMPT" ]; then
             . $GIT_PROMPT
             export GIT_PS1_SHOWDIRTYSTATE=true
-            BRANCH="\$(__git_ps1 '(%s) ')" 
+            BRANCH="\$(__git_ps1 '(%s) ')"
         fi
     fi
     export PS1="\h:\u:\w ${BRANCH}"
@@ -41,5 +41,5 @@ prompt_command() {
 
 PROMPT_COMMAND=prompt_command
 
-export LESS='-iRX -x 4'
+export LESS='-iMSFRXx4'
 export PAGER=less
