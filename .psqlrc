@@ -1,11 +1,12 @@
 \set HISTCONTROL ignoreboth
 \set HISTSIZE -1
 \set ON_ERROR_STOP
-\set PROMPT1 '%n@%M:%:PORT:/%/(%:SERVER_VERSION_NAME:) (pid %p) %# '
-
+\set PROMPT1 '%n@%M:%:PORT:/%/(%:SERVER_VERSION_NAME:)(%p) %# '
+\set PROMPT2 '%n@%M:%:PORT:/%/(%:SERVER_VERSION_NAME:)(%p) %# '
 \pset expanded auto
 \pset timing on
 \pset linestyle unicode
+\pset unicode_header_linestyle double
 \pset unicode_border_linestyle single
 \pset unicode_column_linestyle single
-\pset unicode_header_linestyle double
+\setenv LESS '-MFXSx4R'
