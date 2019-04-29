@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
+
 set -e
 dir="$(git rev-parse --git-dir)"
 trap 'rm -f "$dir/$$.tags"' EXIT
-git ls-files | \
-  ctags --tag-relative -L - -f"$dir/$$.tags" --languages=-javascript
+
+# ctags setup
+git ls-files --recurse-submodules | ctags --tag-relative -L - -f"$dir/$$.tags"
 mv "$dir/$$.tags" "$dir/tags"
+
+# cscope setup
+git ls-files --recurse-submodules > "$dir/$$.lst"
+cscope -q -b -f"$dir/$$.cscope.out" -i "$dir/$$.lst"
+mv "$dir/$$.cscope.out" "$dir/cscope.out"
+mv "$dir/$$.cscope.out.po" "$dir/cscope.out.po"
+mv "$dir/$$.cscope.out.in" "$dir/cscope.out.in"
+rm "$dir/$$.lst"
