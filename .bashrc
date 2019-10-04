@@ -1,5 +1,7 @@
-export HISTSIZE=1000000
-export HISTFILESIZE=1000000
+#!/usr/bin/env bash
+
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 export HISTCONTROL=ignoreboth
 
 if [ -x brew ]; then
